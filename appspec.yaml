@@ -1,0 +1,9 @@
+version: 0.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:ap-south-1:266735821233:task-definition/test-poc-td:1"  # ECS Task Definition ARN
+        LoadBalancerInfo:
+          ContainerName: "test-poc-cont"  # Container name in ECS Task Definition
+          ContainerPort: 8080  # Port the container listens on
